@@ -14,13 +14,20 @@ export default function listaReducer(estado = [], accion) {
        ]
        case TOGGLE_ITEM: return estado.map( (item) => {
            if (item.id === accion.itemId) {
-               return Object.assign({}, item, {
-                        comprado: !item.comprado
-                      })
+               return itemReducer(item, accion)
            }
            else return item
        })
        default: return estado
    }  
+}
+
+function itemReducer(estado, accion) {
+    switch(accion.type) {
+        case TOGGLE_ITEM: return Object.assign({}, estado, {
+            comprado: !estado.comprado
+        })
+        default: return estado
+    }
 }
 
