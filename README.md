@@ -1,6 +1,6 @@
-# plantilla_webpack
+# lista-compra-redux
 
-Plantilla de web con ES6+React+Webpack
+Ejemplo de la lista de la compra con Redux+React+Webpack
 
 Antes que nada instalar las dependencias con `npm install`
 
