@@ -1,5 +1,5 @@
 {
-  "name": "plantilla_webpack",
+  "name": "lista-compra-redux",
   "version": "1.0.0",
   "description": "Plantilla de proyecto JS con Webpack+ES6",
   "main": "bundle.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ottocol/plantilla_webpack.git"
+    "url": "git+https://github.com/ottocol/lista-compra-redux.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ottocol/plantilla_webpack/issues"
+    "url": "https://github.com/ottocol/lista-compra-redux/issues"
   },
-  "homepage": "https://github.com/ottocol/plantilla_webpack#readme",
+  "homepage": "https://github.com/ottocol/lista-compra-redux#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
