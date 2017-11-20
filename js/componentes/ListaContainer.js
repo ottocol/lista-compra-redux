@@ -1,15 +1,19 @@
 import React from 'react'
 import Lista from './Lista'
 
+import {toggleItem} from '../redux/acciones'
+
 //En redux un "container" es un componente que se conecta con el store
-//y le despacha acciones y/o recibe los cambios de estado.
-//En este caso solo recibimos cambios de estado
+//y le despacha acciones y/o recibe los cambios de estado
+//En este componente hacemos las dos cosas: despachar acción con toggleItem 
+//y escuchar los cambios de estado para repintar la lista.
 //Recibimos el store en la prop del mismo nombre
 //Con la librería 'react-redux' se simplificaría la sintaxis de conexión con el store
 //pero de momento se hace así para que se vea qué está pasando 
 class ListaContainer extends React.Component {
     constructor(props) {
         super(props)
+        this.handleToggle = this.handleToggle.bind(this)
         this.state = {items:[]}
     }
 
@@ -24,8 +28,13 @@ class ListaContainer extends React.Component {
         })
     }
 
+    //cuando se hace clic en un item despachamos la acción correspondiente
+    handleToggle(itemId) {
+        this.props.store.dispatch(toggleItem(itemId))
+    }
+
     render() {
-        return <Lista items={this.state.items}/>
+        return <Lista items={this.state.items} handleToggle={this.handleToggle}/>
     }
 }
 
