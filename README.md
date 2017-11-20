@@ -4,7 +4,7 @@ Ejemplo de la lista de la compra con Redux+React+Webpack
 
 ## Funcionalidades incluidas
 
-Esta versión solo tiene la lista en local, es decir no accede a ningún API REST. La lista  se guarda en el *store* de redux, que se crea al cargar la página (== lista inicialmente vacía, y si se recarga la página la lista se pierde). Se hace así para evitar de momento acciones asíncronas, ya que comunicar con un API REST es asíncrono.
+Esta versión accede a un API REST desplegado en "la nube", en la plataforma `https://zeit.co/now`. En la carpeta API se incluyen los fuentes del servidor.
 
 La parte de React accede al *store* "manualmente", o sea no usamos la librería `react-redux`. Los componentes `Container` están suscritos a los cambios de estado del *store* y/o le despachan acciones. El resto de componentes no "saben nada" de redux. 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Lista from './Lista'
 
-import {toggleItem} from '../redux/acciones'
+import {toggleItem, fetchItems} from '../redux/acciones'
 
 //En redux un "container" es un componente que se conecta con el store
 //y le despacha acciones y/o recibe los cambios de estado
@@ -26,6 +26,7 @@ class ListaContainer extends React.Component {
             //pero normalmente sería solo una parte
             this.setState({items:this.props.store.getState()})
         })
+        this.props.store.dispatch(fetchItems())
     }
 
     //cuando se hace clic en un item despachamos la acción correspondiente

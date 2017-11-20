@@ -1,15 +1,13 @@
-import {ADD_ITEM, TOGGLE_ITEM} from './acciones'
-
-var itemId = 1
+import {ADD_ITEM, TOGGLE_ITEM, REQUEST_ITEMS, RECEIVE_ITEMS} from './acciones'
 
 export default function listaReducer(estado = [], accion) {
    switch (accion.type) {
        case ADD_ITEM: return [
            ...estado,
            {  
-               id: itemId++,
-               nombre: accion.nombreItem,
-               comprado: false
+               id: accion.newItem.id,
+               nombre: accion.newItem.nombre,
+               comprado: accion.newItem.comprado
            }
        ]
        case TOGGLE_ITEM: return estado.map( (item) => {
@@ -18,6 +16,7 @@ export default function listaReducer(estado = [], accion) {
            }
            else return item
        })
+       case RECEIVE_ITEMS: return accion.items
        default: return estado
    }  
 }
