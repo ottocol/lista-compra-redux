@@ -1,5 +1,5 @@
 import React from 'react'
-import {ADD_ITEM} from '../redux/acciones'
+import {addItem} from '../redux/acciones'
 import NuevoItem from './NuevoItem'
 
 //En redux un "container" es un componente que se conecta con el store
@@ -16,7 +16,7 @@ class NuevoItemContainer extends React.Component {
 
     //El componente hijo NuevoItem llama a este método cuando se pulsa "Añadir"
     handleNuevoItem(nombre) {
-        var accion = {type: ADD_ITEM, nombreItem: nombre}
+        var accion = addItem(nombre)
         this.props.store.dispatch(accion)
     }
 
